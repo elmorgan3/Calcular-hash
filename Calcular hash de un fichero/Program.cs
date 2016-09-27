@@ -1,13 +1,12 @@
-﻿
-            using System;
-            using System.Collections.Generic;
-            using System.Linq;
-            using System.Text;
-            using System.Threading.Tasks;
-            //Usamos esta libreria para poder crear el hash
-            using System.Security.Cryptography;
-            //Esta libreria permite leer y escribir en archivos
-            using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+//Usamos esta libreria para poder crear el hash
+using System.Security.Cryptography;
+//Esta libreria permite leer y escribir en archivos
+using System.IO;
 
 namespace Calcular_hash_de_un_fichero
 {
@@ -46,7 +45,8 @@ namespace Calcular_hash_de_un_fichero
                         textoPlano = File.ReadAllText(fileName);
 
                         // Convertimos la variable string, en un array de bytes
-                        byte[] bytesIn = UTF8Encoding.UTF8.GetBytes(fileName);
+                        // EL ERROR QUE TENIA ES QUE AQUI DONDE TEXTOPLANO PUSE FILENAME, POR ESO NO ME IVA
+                        byte[] bytesIn = UTF8Encoding.UTF8.GetBytes(textoPlano);
 
                         // Instanciamos la classe para hacer el hash
                         SHA512Managed SHA512 = new SHA512Managed();
@@ -88,7 +88,8 @@ namespace Calcular_hash_de_un_fichero
                         textoPlano = File.ReadAllText(fileName);
 
                         // Convertimos la variable string, en un array de bytes
-                        byte[] bytesIn = UTF8Encoding.UTF8.GetBytes(fileName);
+                        // EL ERROR QUE TENIA ES QUE AQUI DONDE TEXTOPLANO PUSE FILENAME, POR ESO NO ME IVA
+                        byte[] bytesIn = UTF8Encoding.UTF8.GetBytes(textoPlano);
 
                         // Instanciamos la classe para hacer el hash
                         SHA512Managed SHA512 = new SHA512Managed();
@@ -120,6 +121,7 @@ namespace Calcular_hash_de_un_fichero
                             Console.WriteLine("Los hash no coinciden");
 
                         }
+                        SHA512.Dispose();
                     }
                     catch (Exception)
                     {
