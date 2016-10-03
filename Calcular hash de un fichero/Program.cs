@@ -25,10 +25,14 @@ namespace Calcular_hash_de_un_fichero
             while (variable != 0)
             {
                 //Preguntamos al usuario que quiere hacer 
-                Console.WriteLine("Si quieres calcular el hash de un fichero pulsa 1, si lo quieres comparar pulsa 2 y para salir pulsa 0.");
+                Console.WriteLine("************************CALCULAR HASH*****************************\n");
+                Console.WriteLine("Pulsa 1 para calcular el hash del documento de texto.");
+                Console.WriteLine("Pulsa 2 para comparar los hash y comprobar la integridad.");
+                Console.WriteLine("Pulsa 0 para cerrar el programa.\n");
+                Console.WriteLine("******************************************************************");
 
                 //Para leer un integer hacer una conversion al mismo tiempo que lo leemos 
-                variable = Int32.Parse(Console.ReadLine());
+                variable = Int32.Parse(Console.ReadLine());             
 
                 if (variable == 1)
                 {
