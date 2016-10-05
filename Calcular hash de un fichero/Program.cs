@@ -62,11 +62,14 @@ namespace Calcular_hash_de_un_fichero
                         //fichero de texto hay que convertirlo a un string
                         String textOut = BitConverter.ToString(hashResult, 0);
 
-                        //Avisamos de que se ha creado el hash y con que nombre se guarda
-                        Console.WriteLine("Hash calculado y guardado en la misma carpeta del fichero con el nombre de hash.txt");
+                        //Avisamos de que se ha creado el hash y preguntamos con que nombre lo quiere guardar
+                        Console.WriteLine("Hash calculado.\nIntroduce el nombre con el que se guarde el hash, recuerda poner '.txt' al final");
 
-                        //guardamos en un fichero el hash y le ponemos el nombre de hash.txt
-                        File.WriteAllText("hash.txt", textOut);
+                        //Leemos el nombre del archivo
+                        fileHash = Console.ReadLine();
+
+                        //guardamos en un fichero el hash y le ponemos el nombre que nos diga el usuario
+                        File.WriteAllText(fileHash, textOut);
 
                         // Eliminamos la clase instanciada para liberar memoria
                         SHA512.Dispose();
